@@ -31,7 +31,9 @@ public:
     T* dataPtr(int n);
     int size() const;
     void fill(myArray<T, N>& a, const T& val);
-    void printAll() const;
+    void fillexplicit(myArray<T, N>& c, const T& value, int stelle);
+    void print(myArray<T, N>&d, int stelle);
+    void printAll(myArray<T, N>& b) const;
 
 private:
     T elem[N];
@@ -87,9 +89,18 @@ void myArray<T,N>::fill(myArray<T, N>& a, const T& val) {
 }
 
 template <class T, int N>
-void myArray<T,N>::printAll() const{
-    int b = 0;
-    for(size_t i{}; b<i;++b) std::cout << elem[b] << std::endl;
+void myArray<T,N>::fillexplicit(myArray<T,N>& c, const T& value, int stelle){
+    c[stelle] = value;
+}
+
+template<class T, int N>
+void myArray<T,N>::print(myArray<T,N>& d, int stelle){
+    std::cout << d[stelle] << std::endl;
+}
+
+template <class T, int N>
+void myArray<T,N>::printAll(myArray<T, N>& b) const{
+    for(size_t i{}; i < N;++i){ std::cout << b[i] << std::endl;}
 }
 
 #endif /* MYARRAY_HPP */
