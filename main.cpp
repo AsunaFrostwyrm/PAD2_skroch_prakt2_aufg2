@@ -13,6 +13,8 @@
 
 #include <cstdlib>
 #include "myarray.hpp"
+#include <iostream>
+
 using namespace std;
 
 /*
@@ -20,7 +22,9 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
-    myArray<double,256> dmA{};
+    myArray<int, 10> buf{};
+    buf.fill(buf, 5);
+    buf.printAll();
     
     return 0;
 }

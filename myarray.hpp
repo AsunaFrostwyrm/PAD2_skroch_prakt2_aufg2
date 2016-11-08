@@ -89,7 +89,7 @@ void myArray<T,N>::fill(myArray<T, N>& a, const T& val) {
 template <class T, int N>
 void myArray<T,N>::printAll() const{
     int b = 0;
-    for(size_t i{}; b<i;++i) std::cout << elem[b] << std::endl;
+    for(size_t i{}; b<i;++b) std::cout << elem[b] << std::endl;
 }
 
 #endif /* MYARRAY_HPP */
