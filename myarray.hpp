@@ -17,12 +17,14 @@
 #include <iostream>
 #include <initializer_list>
 #include <stdexcept>
+#include <string>
 
 template< class T, int N > class myArray {
 public:
     myArray();
     explicit myArray(T);
     myArray(const myArray&);
+    ~myArray();
     myArray(std::initializer_list<T>);
     myArray& operator=(const myArray&);
     T& operator[](int n);
@@ -46,6 +48,10 @@ myArray<T,N>::myArray() : myArray{ T{} } {
 template <class T, int N>
 myArray<T,N>::myArray(T t){
     for(size_t i{}; i<N; ++i) elem[i] = t;
+}
+
+template <class T, int N>
+myArray<T,N>::~myArray(){
 }
 template <class T, int N>
 myArray<T,N>& myArray<T,N>::operator=( const myArray<T,N>& r){
